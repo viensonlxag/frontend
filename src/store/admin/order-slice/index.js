@@ -10,7 +10,7 @@ export const getAllOrdersForAdmin = createAsyncThunk(
   "/order/getAllOrdersForAdmin",
   async () => {
     const response = await axios.get(
-      `https://tm-shop.azurewebsites.net/api/admin/orders/get`
+      `http://20.39.190.166:5000/api/admin/orders/get`
     );
 
     return response.data;
@@ -21,7 +21,7 @@ export const getOrderDetailsForAdmin = createAsyncThunk(
   "/order/getOrderDetailsForAdmin",
   async (id) => {
     const response = await axios.get(
-      `https://tm-shop.azurewebsites.net/api/admin/orders/details/${id}`
+      `http://20.39.190.166:5000/api/admin/orders/details/${id}`
     );
 
     return response.data;
@@ -32,7 +32,7 @@ export const updateOrderStatus = createAsyncThunk(
   "/order/updateOrderStatus",
   async ({ id, orderStatus }) => {
     const response = await axios.put(
-      `https://tm-shop.azurewebsites.net/api/admin/orders/update/${id}`,
+      `http://20.39.190.166:5000/api/admin/orders/update/${id}`,
       {
         orderStatus,
       }
